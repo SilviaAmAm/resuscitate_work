@@ -39,7 +39,7 @@ print("%i samples for training, %i samples for testing plus a trajectory of %i s
         %(len(idx_train),len(idx_test),len(idx_traj)))
 
 # Saving the indices of train/test
-np.savez("../outputs/ch4cn_ho_001.npz", idx_train, idx_test)
+np.savez("../outputs/ch4cn_ho_005.npz", idx_train, idx_test)
 
 # Making the data object
 data = qmlearn.Data()
@@ -52,13 +52,13 @@ data.set_energies(ene[idx_train])
 
 # Create model
 estimator = sklearn.pipeline.make_pipeline(
-                qmlearn.representations.CoulombMatrix(data, sorting="unsorted"),
+                qmlearn.representations.AtomicSLATM(data),
                 qmlearn.models.NeuralNetwork(hl3=0)
                 )
 
 # Saving the model and training on all the samples in the model
-pickle.dump(estimator, open('../outputs/ch4cn_ho_001.pickle', 'wb'))
+pickle.dump(estimator, open('../outputs/ch4cn_ho_005.pickle', 'wb'))
 indices = np.arange(len(idx_train))
-with open('../outputs/ch4cn_ho_001.csv', 'w') as f:
+with open('../outputs/ch4cn_ho_005.csv', 'w') as f:
     for i in indices:
         f.write('%s\n' % i)
