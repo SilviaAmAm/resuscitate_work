@@ -1,0 +1,428 @@
+nohup: ignoring input
+======================================================================
+= osprey is a tool for machine learning hyperparameter optimization. =
+======================================================================
+
+osprey version:      1.2.0dev
+time:                June 03, 2019  8:41 AM
+hostname:            it036365
+cwd:                 /home/sa16246/repositories/resuscitate_work/inputs
+pid:                 7160
+
+Loading config file:     ch4cn_ho_010.yaml...
+
+Loading dataset...
+
+Dataset contains 15872 element(s) with out labels
+The elements have shape: [(1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), (1,), ...]
+Instantiated estimator:
+  Pipeline(memory=None,
+         steps=[('atomcenteredsymmetryfunctions',
+                 AtomCenteredSymmetryFunctions(cutoff=5.0,
+                                               data=<qml.qmlearn.data.Data object at 0x7f90bdbb2f60>,
+                                               elements='auto', nbasis=3,
+                                               precision=2)),
+                ('neuralnetwork',
+                 NeuralNetwork(batch_size=200, hl1=20, hl2=10, hl3=0, hl4=0,
+                               iterations=500, l1_reg=0.0, l2_reg=0.0,
+                               learning_rate=0.001, scoring='neg_mae',
+                               size='auto'))],
+         verbose=False)
+Hyperparameter search space:
+  atomcenteredsymmetryfunctions__nbasis	(int)          6 <= x <= 30
+  atomcenteredsymmetryfunctions__cutoff	(float) 3.000000 <= x <  5.000000
+  atomcenteredsymmetryfunctions__precision	(float) 1.050000 <= x <  3.000000
+  neuralnetwork__hl1       	(int)         30 <= x <= 500
+  neuralnetwork__hl2       	(int)         30 <= x <= 500
+  neuralnetwork__batch_size	(int)         10 <= x <= 200
+  neuralnetwork__iterations	(int)        300 <= x <= 5000
+  neuralnetwork__learning_rate	(float) 0.000040 <= x <  0.030000
+  neuralnetwork__l2_reg    	(float) 0.000000 <= x <  0.000400
+  neuralnetwork__l1_reg    	(float) 0.000000 <= x <  0.010000
+
+----------------------------------------------------------------------
+Beginning iteration                                             1 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 0 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 6, 'atomcenteredsymmetryfunctions__cutoff': 4.335753576249762, 'atomcenteredsymmetryfunctions__precision': 1.1172691365433125, 'neuralnetwork__hl1': 142, 'neuralnetwork__hl2': 384, 'neuralnetwork__batch_size': 185, 'neuralnetwork__iterations': 876, 'neuralnetwork__learning_rate': 0.0001859330146964472, 'neuralnetwork__l2_reg': 0.0002395789506498754, 'neuralnetwork__l1_reg': 0.0011822400830091414}
+(random took 0.003 s)
+
+2019-06-03 08:41:34.523574: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-06-03 08:41:34.672595: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:897] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-06-03 08:41:34.673539: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:06:00.0
+totalMemory: 10.92GiB freeMemory: 10.76GiB
+2019-06-03 08:41:34.673556: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 08:41:34.877558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 08:41:34.877602: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 08:41:34.877609: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 08:41:34.877865: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-03 08:47:03.040697: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 08:47:03.040756: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 08:47:03.040763: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 08:47:03.040769: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 08:47:03.040911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-03 08:52:33.841312: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 08:52:33.841372: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 08:52:33.841379: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 08:52:33.841384: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 08:52:33.841529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -7.511834
+(best score so far   = -7.511834)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             2 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 1 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 30, 'atomcenteredsymmetryfunctions__cutoff': 4.945596579822419, 'atomcenteredsymmetryfunctions__precision': 1.3251823475941629, 'neuralnetwork__hl1': 460, 'neuralnetwork__hl2': 277, 'neuralnetwork__batch_size': 183, 'neuralnetwork__iterations': 844, 'neuralnetwork__learning_rate': 0.0026429021151813128, 'neuralnetwork__l2_reg': 1.9681464566540453e-08, 'neuralnetwork__l1_reg': 0.00015527809149336504}
+(random took 0.002 s)
+
+2019-06-03 08:58:23.464686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 08:58:23.464741: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 08:58:23.464751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 08:58:23.464757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 08:58:23.464902: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-03 10:34:35.718677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 10:34:35.718748: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 10:34:35.718755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 10:34:35.718761: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 10:34:35.718926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-03 12:11:21.594188: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 12:11:21.594264: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 12:11:21.594271: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 12:11:21.594276: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 12:11:21.594450: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -1.425337
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             3 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 2 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 28, 'atomcenteredsymmetryfunctions__cutoff': 3.308905960741981, 'atomcenteredsymmetryfunctions__precision': 1.087899913941657, 'neuralnetwork__hl1': 315, 'neuralnetwork__hl2': 41, 'neuralnetwork__batch_size': 46, 'neuralnetwork__iterations': 2404, 'neuralnetwork__learning_rate': 0.01663613115634551, 'neuralnetwork__l2_reg': 2.5794049094067977e-05, 'neuralnetwork__l1_reg': 0.000651157251691872}
+(random took 0.002 s)
+
+2019-06-03 13:47:56.297015: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 13:47:56.297070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 13:47:56.297078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 13:47:56.297084: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 13:47:56.297253: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-03 18:18:21.395434: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 18:18:21.395500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 18:18:21.395507: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 18:18:21.395514: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 18:18:21.395682: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-03 22:49:05.303992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-03 22:49:05.304063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-03 22:49:05.304070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-03 22:49:05.304076: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-03 22:49:05.304240: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -2.625336
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             4 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 3 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 16, 'atomcenteredsymmetryfunctions__cutoff': 3.0112283679824694, 'atomcenteredsymmetryfunctions__precision': 2.237578294003231, 'neuralnetwork__hl1': 79, 'neuralnetwork__hl2': 31, 'neuralnetwork__batch_size': 89, 'neuralnetwork__iterations': 1279, 'neuralnetwork__learning_rate': 0.0004557125739212869, 'neuralnetwork__l2_reg': 1.1256902136506721e-08, 'neuralnetwork__l1_reg': 2.6108642301435284e-06}
+(random took 0.002 s)
+
+2019-06-04 03:19:13.890438: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 03:19:13.890509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 03:19:13.890516: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 03:19:13.890522: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 03:19:13.890688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 04:01:50.950828: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 04:01:50.950897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 04:01:50.950904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 04:01:50.950910: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 04:01:50.951071: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 04:44:25.411755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 04:44:25.411819: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 04:44:25.411827: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 04:44:25.411833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 04:44:25.412006: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -2.072361
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             5 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 4 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 11, 'atomcenteredsymmetryfunctions__cutoff': 4.874924580977655, 'atomcenteredsymmetryfunctions__precision': 2.0934331612616877, 'neuralnetwork__hl1': 49, 'neuralnetwork__hl2': 82, 'neuralnetwork__batch_size': 17, 'neuralnetwork__iterations': 4226, 'neuralnetwork__learning_rate': 0.004107313471056304, 'neuralnetwork__l2_reg': 1.5798102334157273e-08, 'neuralnetwork__l1_reg': 0.0024039715647584366}
+(random took 0.002 s)
+
+2019-06-04 05:26:44.469729: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 05:26:44.469804: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 05:26:44.469814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 05:26:44.469820: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 05:26:44.469989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 08:41:46.380459: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 08:41:46.380532: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 08:41:46.380539: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 08:41:46.380545: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 08:41:46.380724: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 11:56:30.472558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 11:56:30.472638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 11:56:30.472645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 11:56:30.472651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 11:56:30.472814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -1.610480
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             6 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 5 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 13, 'atomcenteredsymmetryfunctions__cutoff': 4.5189258814000315, 'atomcenteredsymmetryfunctions__precision': 2.695153159523073, 'neuralnetwork__hl1': 361, 'neuralnetwork__hl2': 248, 'neuralnetwork__batch_size': 32, 'neuralnetwork__iterations': 3841, 'neuralnetwork__learning_rate': 0.016296425119813406, 'neuralnetwork__l2_reg': 1.8373364189269579e-06, 'neuralnetwork__l1_reg': 9.653213684977767e-06}
+(random took 0.002 s)
+
+2019-06-04 15:09:59.701678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 15:09:59.701750: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 15:09:59.701757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 15:09:59.701763: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 15:09:59.701927: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 17:19:49.080555: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 17:19:49.080635: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 17:19:49.080652: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 17:19:49.080658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 17:19:49.080828: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 19:31:44.749666: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 19:31:44.749741: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 19:31:44.749749: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 19:31:44.749755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 19:31:44.749926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -2.281030
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             7 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 6 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 6, 'atomcenteredsymmetryfunctions__cutoff': 4.085240614984766, 'atomcenteredsymmetryfunctions__precision': 1.3501945559734922, 'neuralnetwork__hl1': 244, 'neuralnetwork__hl2': 289, 'neuralnetwork__batch_size': 152, 'neuralnetwork__iterations': 2531, 'neuralnetwork__learning_rate': 0.0010539289059705013, 'neuralnetwork__l2_reg': 0.00020312374108152412, 'neuralnetwork__l1_reg': 4.6072165744151824e-05}
+(random took 0.002 s)
+
+2019-06-04 21:41:23.923763: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 21:41:23.923829: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 21:41:23.923836: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 21:41:23.923842: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 21:41:23.924005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 22:03:07.480078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 22:03:07.480160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 22:03:07.480168: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 22:03:07.480174: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 22:03:07.480354: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-04 22:24:52.251231: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 22:24:52.251314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 22:24:52.251322: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 22:24:52.251341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 22:24:52.251519: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -1.609699
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             8 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 7 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 12, 'atomcenteredsymmetryfunctions__cutoff': 3.23048180484774, 'atomcenteredsymmetryfunctions__precision': 2.6055037684246125, 'neuralnetwork__hl1': 162, 'neuralnetwork__hl2': 202, 'neuralnetwork__batch_size': 117, 'neuralnetwork__iterations': 4000, 'neuralnetwork__learning_rate': 0.02829722640976884, 'neuralnetwork__l2_reg': 4.036656650097348e-08, 'neuralnetwork__l1_reg': 0.001565509146818659}
+(random took 0.002 s)
+
+2019-06-04 22:46:39.171772: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-04 22:46:39.171854: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-04 22:46:39.171862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-04 22:46:39.171868: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-04 22:46:39.172049: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 00:09:54.872581: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 00:09:54.872661: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 00:09:54.872668: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 00:09:54.872675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 00:09:54.872846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 01:32:28.221669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 01:32:28.221742: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 01:32:28.221749: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 01:32:28.221755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 01:32:28.221908: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -2.198516
+(best score so far   = -1.425337)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                             9 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 8 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 9, 'atomcenteredsymmetryfunctions__cutoff': 4.659579846782169, 'atomcenteredsymmetryfunctions__precision': 1.441945433197832, 'neuralnetwork__hl1': 320, 'neuralnetwork__hl2': 49, 'neuralnetwork__batch_size': 67, 'neuralnetwork__iterations': 869, 'neuralnetwork__learning_rate': 0.0016487884533703896, 'neuralnetwork__l2_reg': 2.1166636951361985e-05, 'neuralnetwork__l1_reg': 1.79070950991635e-07}
+(random took 0.002 s)
+
+2019-06-05 02:52:38.243052: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 02:52:38.243129: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 02:52:38.243142: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 02:52:38.243148: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 02:52:38.243318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 03:08:07.347808: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 03:08:07.347879: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 03:08:07.347887: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 03:08:07.347895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 03:08:07.348073: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 03:23:42.271141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 03:23:42.271211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 03:23:42.271218: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 03:23:42.271225: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 03:23:42.271396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -0.918926
+(best score so far   = -0.918926)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            10 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 9 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 7, 'atomcenteredsymmetryfunctions__cutoff': 3.961738062455009, 'atomcenteredsymmetryfunctions__precision': 1.9798929230045217, 'neuralnetwork__hl1': 404, 'neuralnetwork__hl2': 278, 'neuralnetwork__batch_size': 37, 'neuralnetwork__iterations': 4073, 'neuralnetwork__learning_rate': 0.007155857481798703, 'neuralnetwork__l2_reg': 1.7916553551209192e-08, 'neuralnetwork__l1_reg': 3.3549674856160144e-07}
+(random took 0.001 s)
+
+2019-06-05 03:39:03.191133: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 03:39:03.191207: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 03:39:03.191215: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 03:39:03.191231: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 03:39:03.191401: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 05:04:21.037085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 05:04:21.037155: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 05:04:21.037162: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 05:04:21.037169: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 05:04:21.037337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 06:29:52.537867: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 06:29:52.537938: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 06:29:52.537945: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 06:29:52.537950: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 06:29:52.538112: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -1.372626
+(best score so far   = -0.918926)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            11 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 10 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 6, 'atomcenteredsymmetryfunctions__cutoff': 3.3460705421078982, 'atomcenteredsymmetryfunctions__precision': 1.716369103093316, 'neuralnetwork__hl1': 194, 'neuralnetwork__hl2': 85, 'neuralnetwork__batch_size': 44, 'neuralnetwork__iterations': 889, 'neuralnetwork__learning_rate': 0.009304582031544238, 'neuralnetwork__l2_reg': 0.00016359855592407692, 'neuralnetwork__l1_reg': 8.90703629315408e-05}
+(random took 0.002 s)
+
+2019-06-05 07:55:17.626050: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 07:55:17.626113: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 07:55:17.626120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 07:55:17.626126: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 07:55:17.626282: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 08:12:24.778875: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 08:12:24.778933: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 08:12:24.778940: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 08:12:24.778946: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 08:12:24.779118: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 08:29:37.426123: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 08:29:37.426195: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 08:29:37.426202: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 08:29:37.426208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 08:29:37.426370: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Success! Model score = -1.225176
+(best score so far   = -0.918926)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+----------------------------------------------------------------------
+Beginning iteration                                            12 / 40
+----------------------------------------------------------------------
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+History contains: 11 trials
+Choosing next hyperparameters with random...
+  {'atomcenteredsymmetryfunctions__nbasis': 20, 'atomcenteredsymmetryfunctions__cutoff': 4.813236828682283, 'atomcenteredsymmetryfunctions__precision': 2.608386487489908, 'neuralnetwork__hl1': 86, 'neuralnetwork__hl2': 72, 'neuralnetwork__batch_size': 49, 'neuralnetwork__iterations': 3525, 'neuralnetwork__learning_rate': 0.003855717022950676, 'neuralnetwork__l2_reg': 3.155619948079831e-06, 'neuralnetwork__l1_reg': 7.185930627023631e-05}
+(random took 0.002 s)
+
+2019-06-05 08:46:50.814916: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 08:46:50.814986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 08:46:50.814993: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 08:46:50.814999: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 08:46:50.815165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-06-05 12:04:42.867859: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-06-05 12:04:42.867919: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-05 12:04:42.867926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-06-05 12:04:42.867932: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-06-05 12:04:42.868087: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+
+11/40 models fit successfully.
+time:         June 05, 2019 12:10 PM
+elapsed:      2 days, 3 hours, 29 minutes, 19 seconds.
+osprey worker exiting.
+Loading trials database: sqlite:///../outputs/ch4cn_ho_010.db...
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 16.5min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 288.6min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 811.6min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 127.7min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 583.2min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 391.2min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 65.2min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 246.2min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 46.5min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 256.4min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed: 51.1min finished
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+== osprey worker received signal SIGTERM!
+== exiting immediately.

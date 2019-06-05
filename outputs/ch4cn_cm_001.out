@@ -1,0 +1,16 @@
+nohup: ignoring input
+2019-05-28 10:51:01.234877: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-05-28 10:51:01.343067: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:897] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-05-28 10:51:01.343948: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:06:00.0
+totalMemory: 10.92GiB freeMemory: 364.50MiB
+2019-05-28 10:51:01.343967: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-05-28 10:51:01.648237: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-05-28 10:51:01.648289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-05-28 10:51:01.648297: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-05-28 10:51:01.648500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 79 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+Warning! The mae is multiplied by -1 so that it can be minimised in Osprey!
+-9.422890663146973 12.758364
+Warning! The mae is multiplied by -1 so that it can be minimised in Osprey!
+-7.834076881408691 7.353612
