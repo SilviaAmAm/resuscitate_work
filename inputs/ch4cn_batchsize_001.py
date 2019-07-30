@@ -2,7 +2,11 @@ from qml.aglaia.aglaia import MRMP
 import numpy as np
 import h5py
 import time
+import os
 import tensorflow as tf
+
+if not os.path.exists("../outputs/ch4cn_batchsize_001/"):
+    os.makedirs("../outputs/ch4cn_batchsize_001/")
 
 # Create data
 with h5py.File("../datasets/dftb_vr_cc.hdf5") as data:
@@ -22,14 +26,16 @@ idx_train, idx_test = train_data["arr_0"], train_data["arr_1"]
 
 print(len(idx_train))
 
-batch_sizes = [50, 100, 500, 1000, 3000]
+batch_sizes = [5, 50, 100, 500, 1000, 3000]
 scores = []
 wall_times = []
 grad_updates = []
 
 for bs in batch_sizes:
     # Creating the model
-    estimator = MRMP(iterations=2401, l1_reg=3.7260078742338124e-06, l2_reg=2.1321843097427243e-07, learning_rate=0.0004, representation_name='slatm', tensorboard=False, hidden_layer_sizes=(32,298,), batch_size=bs)
+    tb_subdir = "../outputs/ch4cn_batchsize_001/tb_" + str(bs)
+    estimator = MRMP(iterations=2401, l1_reg=3.7260078742338124e-06, l2_reg=2.1321843097427243e-07, learning_rate=0.0004,
+                     representation_name='unsorted_coulomb_matrix', store_frequency=25, tensorboard=True, tensorboard_subdir=tb_subdir, hidden_layer_sizes=(32,298,), batch_size=bs)
     
     estimator.set_properties(ene)
     estimator.generate_representation(xyz, zs, method='fortran')
