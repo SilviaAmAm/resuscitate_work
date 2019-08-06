@@ -1,0 +1,20 @@
+nohup: ignoring input
+2019-07-31 11:30:01.111775: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-07-31 11:30:01.266628: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:897] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-07-31 11:30:01.267651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1392] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:06:00.0
+totalMemory: 10.92GiB freeMemory: 10.76GiB
+2019-07-31 11:30:01.267668: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1471] Adding visible gpu devices: 0
+2019-07-31 11:30:01.480461: I tensorflow/core/common_runtime/gpu/gpu_device.cc:952] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-07-31 11:30:01.480505: I tensorflow/core/common_runtime/gpu/gpu_device.cc:958]      0 
+2019-07-31 11:30:01.480511: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   N 
+2019-07-31 11:30:01.480757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1084] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10407 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2019-07-31 11:30:02.285597: W tensorflow/core/framework/allocator.cc:108] Allocation of 7867800000 exceeds 10% of system memory.
+2019-07-31 11:30:28.325237: W tensorflow/core/framework/allocator.cc:108] Allocation of 7867800000 exceeds 10% of system memory.
+2019-07-31 11:30:30.632956: W tensorflow/core/framework/allocator.cc:108] Allocation of 7867800000 exceeds 10% of system memory.
+2019-07-31 11:30:56.376840: W tensorflow/core/framework/allocator.cc:108] Allocation of 7867800000 exceeds 10% of system memory.
+2019-07-31 11:31:21.958428: W tensorflow/core/framework/allocator.cc:108] Allocation of 7867800000 exceeds 10% of system memory.
+The number of squalane samples is: 1725
+The number of methane samples is: 15000 (train) 
+The time taken to train was 16545 s

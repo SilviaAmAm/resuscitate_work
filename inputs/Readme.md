@@ -48,3 +48,18 @@
 [ch4cn_acsf_002.py](./ch4cn_acsf_002.py): retrains the model using the ACSF and the new hyper-parameters optimised with [ch4cn_ho_010.yaml](./ch4cn_ho_010.yaml). 
 
 [ch4cn_batchsize_001.py](./ch4cn_batchsize_001.py): runs a scan to figure out which batch size is ideal.
+
+## Reproducing the NN squalane results
+
+[make_scaler_001.py](./make_scaler_001.py): This scales the energies of methane, ethane, isobutane, isopentane, isohexanes and squalane.
+
+[hc1sq_train_001.py](./hc1sq_train_001.py): This trains a neural net on 15000 methane samples where the energies have been scaled using [make_scaler_001.py](./make_scaler_001.py). 
+
+[hc1sq_predict_001.py](./hc1sq_predict_001.py): This uses the NN trained by [hc1sq_train_001.py](./hc1sq_train_001.py) and predicts the energy of squalane and then corrects the predictions by removing the offset. It prints the scores for both the corrected and uncorrected score.
+
+[timing_pred_001.py](./timing_pred_001.py): runs the neural networks that have been trained on the mixed data sets and times how long they take to predict the energies of squalane.
+
+[compare_pm6_001.py](./compare_pm6_001.py): comparing the energy of the squalane trajectory where the level of theory is PM6, DFT and NN.
+
+[squal_env_001.py](./squal_env_001.py): Regenerating the environment analysis of squalane, to understand which carbons are poorly represented.
+
